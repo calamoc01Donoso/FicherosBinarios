@@ -1,4 +1,8 @@
 package randoAccesFile;
+/*
+ * @author Celia Alamo Calle 
+ * Descripcion: Programa que escriba en un fichero Aleatorio a traves de  array
+ * */
 
 import java.io.File;
 import java.io.RandomAccessFile;
