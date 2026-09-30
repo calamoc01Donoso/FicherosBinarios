@@ -1,2 +1,1 @@
-# FicherosBinarios
-Archivos de los ficheros en Binarios 
+Carpeta File con la explicacion de los codigos de la clase File 
