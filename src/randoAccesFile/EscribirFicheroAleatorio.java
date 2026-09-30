@@ -24,8 +24,6 @@ public class EscribirFicheroAleatorio {
 		// Iniciamos la posicion en 0
 		posicion = 0;
 
-
-
 		for (;;) {
 			// nos posicionamos en la posicion 0
 			ficherorando.seek(posicion);
