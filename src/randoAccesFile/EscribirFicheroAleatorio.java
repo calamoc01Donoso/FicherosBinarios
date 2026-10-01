@@ -24,7 +24,8 @@ public class EscribirFicheroAleatorio {
 		// Iniciamos la posicion en 0
 		posicion = 0;
 
-		for (;;) {
+		for(;;) {
+			
 			// nos posicionamos en la posicion 0
 			ficherorando.seek(posicion);
 			// obtenemos el id de empleado
@@ -49,7 +50,7 @@ public class EscribirFicheroAleatorio {
 
 			if (id > 0) {
 				//mostramos en pantalla con formato 
-				System.out.printf("ID: %s, Apellido: %s, Departamentos: %s, Salario: %.2f %n", 
+				System.out.printf("ID: %d, Apellido: %s, Departamentos: %d, Salario: %.2f %n", 
 						id, apellidoss.trim(), departamento, salario);
 
 				posicion = posicion + 36;
