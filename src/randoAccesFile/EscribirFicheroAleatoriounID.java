@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.IOException;
 
-public class EscribirFicheroAleatorio {
+public class EscribirFicheroAleatoriounID {
 
 	public static void main(String[] args) throws IOException {
 		File ruta = new File("AleatorioEmpleado.dat");
@@ -22,8 +22,7 @@ public class EscribirFicheroAleatorio {
 		char aux;
 
 		// Iniciamos la posicion en 0
-		int identificador = 5; 
-		posicion = (identificador-1)*36;
+		posicion = 0;
 
 		for (;;) {
 			// nos posicionamos en la posicion 0
@@ -48,7 +47,7 @@ public class EscribirFicheroAleatorio {
 
 			// condicion si id es menos que 0
 
-			if (posicion >= ficherorando.length()) {
+			if (id > 0) {
 				//mostramos en pantalla con formato 
 				System.out.printf("ID: %s, Apellido: %s, Departamentos: %s, Salario: %.2f %n", 
 						id, apellidoss.trim(), departamento, salario);
