@@ -1,7 +1,7 @@
 package randoAccesFile;
 /*
  * @author Celia Alamo Calle 
- * Descripcion: Programa que escriba en un fichero Aleatorio a traves de  array
+ * Descripcion: Programa que escriba(mostrar en pantalla ) en un fichero Aleatorio un id  a traves de  array
  * */
 
 import java.io.File;
@@ -12,55 +12,43 @@ public class EscribirFicheroAleatoriounID {
 
 	public static void main(String[] args) throws IOException {
 		File ruta = new File("AleatorioEmpleado.dat");
-
 		RandomAccessFile ficherorando = new RandomAccessFile(ruta, "r");
 
 		// nota: mismo numero de posicion en cada array
 		int id, departamento, posicion;
 		Double salario;
 		char apellidos[] = new char[10];
-		char aux;
+	char aux; 
+		
+		int identidad= 4; 
 
 		// Iniciamos la posicion en 0
-		posicion = 0;
-
-		for (;;) {
-			// nos posicionamos en la posicion 0
-			ficherorando.seek(posicion);
-			// obtenemos el id de empleado
+		posicion =( identidad - 1 ) * 36;
+		
+		//recorremos apellido 
+		for (int i = 0; i < apellidos.length; i++) {
+			apellidos[i] = ficherorando.readChar();
+		}
+		
+		if(posicion >= ficherorando.length()){
+			
+			System.out.printf("ID: %d, no existe empleado...", identidad); 
+			
+		}else {
+			// me posiciono 
+			ficherorando.seek(posicion); 
 			id = ficherorando.readInt();
-
-			// recorremos el apellido
-
-			for (int i = 0; i < apellidos.length; i++) {
-				// leemo el apellido con el auxiliar
-				aux = ficherorando.readChar();
-
-				// guardamos en el array
-				apellidos[i] = aux;
-			}
-			// transformamos el array a String
-
+			
 			String apellidoss = new String(apellidos);
+			
+			//leemos departamento y salario
 			departamento = ficherorando.readInt();
 			salario = ficherorando.readDouble();
-
-			// condicion si id es menos que 0
-
-			if (id > 0) {
-				//mostramos en pantalla con formato 
-				System.out.printf("ID: %s, Apellido: %s, Departamentos: %s, Salario: %.2f %n", 
-						id, apellidoss.trim(), departamento, salario);
-
-				posicion = posicion + 36;
-
-				if (ficherorando.getFilePointer() == ficherorando.length()) {
-					break;
-				}
-
-			}
-
-		} // fin del for
+			
+			System.out.printf("ID: %d, Apellido: %s, Departamentos: %s, Salario: %.2f %n", 
+					id, apellidoss.trim(), departamento, salario);
+		}
+		
 
 		ficherorando.close(); // cerramos programa
 	
