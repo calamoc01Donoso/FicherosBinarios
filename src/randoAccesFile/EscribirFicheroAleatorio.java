@@ -1,7 +1,7 @@
 package randoAccesFile;
 /*
  * @author Celia Alamo Calle 
- * Descripcion: Programa que escriba en un fichero Aleatorio a traves de  array
+ * Descripcion: Programa que escriba(mostrar en pantalla ) en un fichero Aleatorio a traves de  array
  * */
 
 import java.io.File;
@@ -22,12 +22,14 @@ public class EscribirFicheroAleatorio {
 		char aux;
 
 		// Iniciamos la posicion en 0
+	
 		posicion = 0;
 
 		for(;;) {
 			
 			// nos posicionamos en la posicion 0
 			ficherorando.seek(posicion);
+			
 			// obtenemos el id de empleado
 			id = ficherorando.readInt();
 
@@ -41,18 +43,19 @@ public class EscribirFicheroAleatorio {
 				apellidos[i] = aux;
 			}
 			// transformamos el array a String
-
 			String apellidoss = new String(apellidos);
+			
+			//leemos departamento y salario
 			departamento = ficherorando.readInt();
 			salario = ficherorando.readDouble();
 
 			// condicion si id es menos que 0
-
 			if (id > 0) {
 				//mostramos en pantalla con formato 
 				System.out.printf("ID: %d, Apellido: %s, Departamentos: %d, Salario: %.2f %n", 
 						id, apellidoss.trim(), departamento, salario);
 
+				//posiciono con el siguiente empleado
 				posicion = posicion + 36;
 
 				if (ficherorando.getFilePointer() == ficherorando.length()) {
