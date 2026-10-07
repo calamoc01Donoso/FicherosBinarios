@@ -18,7 +18,7 @@ public class EscribirFicheroAleatoriounID {
 		int id, departamento, posicion;
 		Double salario;
 		char apellidos[] = new char[10];
-	char aux; 
+		char aux; 
 		
 		int identidad= 4; 
 
@@ -49,7 +49,6 @@ public class EscribirFicheroAleatoriounID {
 					id, apellidoss.trim(), departamento, salario);
 		}
 		
-
 		ficherorando.close(); // cerramos programa
 	
 	} // fin de main
