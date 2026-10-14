@@ -26,9 +26,12 @@ public class LeerObjetoSerializable {
 				gente =(Personass) dataEntrada.readObject(); // escribe en cadena de  formato de 
 				System.out.printf("Nombre: $s Su Edad:  %d %n"+ gente.getNombre()+ gente.getEdad()); 
 			}
-		}catch(EOFException e) {}
+		}catch(EOFException e) {
+			dataEntrada.close();
+			
+		}
 		
-		dataEntrada.close();
+		
 
 	}
 
